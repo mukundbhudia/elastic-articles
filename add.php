@@ -2,6 +2,24 @@
 
 require_once 'app/init.php';
 
+if (!empty($_POST)) {
+    // if (isset($_POST['title'], $_POST['body'], $_['keywords'])) { //TODO: issest not working
+
+        $title = $_POST['title'];
+        $body = $_POST['body'];
+        $keywords = explode(',', $_POST['keywords']);
+
+        $indexed = $es->index([
+            'index' => 'articles',
+            'type' => 'article',
+            'body' => [
+                'title' => $title,
+                'body' => $body,
+                'keywords' => $keywords
+            ]
+        ]);
+    // }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">

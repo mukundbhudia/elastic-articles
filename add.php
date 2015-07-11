@@ -9,7 +9,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>Articles</title>
+    <title>Add article</title>
 
     <!-- Bootstrap core CSS -->
     <link href="public/stylesheets/bootstrap.css" rel="stylesheet">
@@ -41,7 +41,7 @@
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="#">Home</a></li>
-                    <li><a href="add.php">Add article</a></li>
+                    <li><a href="index.php">Search</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li class="active"><a href="./">Default <span class="sr-only">(current)</span></a></li>
@@ -56,15 +56,29 @@
         <div class="row">
             <div class="col-md-8">
                 <form class="form-horizontal">
+
                     <div class="form-group">
-                        <label for="search" class="col-sm-3 control-label">Search query</label>
+                        <label for="title" class="col-sm-3 control-label">Title</label>
                         <div class="col-sm-8">
-                            <input type="text" class="form-control" id="search" name="q" placeholder="Keyword">
+                            <input type="text" class="form-control" id="title" name="title" placeholder="Title">
                         </div>
                     </div>
                     <div class="form-group">
+                        <label for="body" class="col-sm-3 control-label">Body</label>
+                        <div class="col-sm-8">
+                            <textarea class="form-control" id="body" name="body" rows="5"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="keywords" class="col-sm-3 control-label">Keywords</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="keywords" name="keywords" placeholder="Keyword">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
                         <div class="col-sm-offset-3 col-sm-8">
-                            <button type="submit" class="btn btn-default">Search</button>
+                            <button type="submit" class="btn btn-default">Add article</button>
                         </div>
                     </div>
                 </form>

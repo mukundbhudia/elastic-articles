@@ -1,0 +1,10 @@
+# Logs
+logs
+*.log
+
+# IntelliJ Idea project files
+.idea
+
+# Dependency directory
+/vendor/*
+/vendors/*

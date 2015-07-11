@@ -1,3 +1,8 @@
+<?php
+
+require_once 'app/init.php';
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -55,7 +60,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8">
-                <form class="form-horizontal">
+                <form class="form-horizontal" action="index.php" method="get">
                     <div class="form-group">
                         <label for="search" class="col-sm-3 control-label">Search query</label>
                         <div class="col-sm-8">

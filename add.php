@@ -1,3 +1,8 @@
+<?php
+
+require_once 'app/init.php';
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -55,7 +60,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8">
-                <form class="form-horizontal">
+                <form class="form-horizontal" action="add.php" method="post">
 
                     <div class="form-group">
                         <label for="title" class="col-sm-3 control-label">Title</label>

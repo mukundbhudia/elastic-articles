@@ -8,3 +8,6 @@ logs
 # Dependency directory
 /vendor/*
 /vendors/*
+
+#Composer lock
+composer.lock

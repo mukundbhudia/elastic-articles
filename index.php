@@ -85,7 +85,7 @@ if (isset($_GET['q'])) {
                     <div class="form-group">
                         <label for="search" class="col-sm-3 control-label">Search query</label>
                         <div class="col-sm-8">
-                            <input type="text" class="form-control" id="search" name="q" placeholder="Keyword">
+                            <input type="text" class="form-control" id="search" name="q" value="<?php echo $_GET['q']; ?>" placeholder="Keyword">
                         </div>
                     </div>
                     <div class="form-group">

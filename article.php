@@ -2,25 +2,14 @@
 
 require_once 'app/init.php';
 
-if (isset($_GET['q'])) {
-    $q = $_GET['q'];
+if (isset($_GET['id'])) {
+    $articleId = $_GET['id'];
 
-    $query = $es->search([
-        'body' => [
-            'query' => [
-                'bool' => [
-                    'should' => [
-                        'match' => ['title' => $q],
-                        'match' => ['body' => $q]
-                    ]
-                ]
-            ]
-        ]
-    ]);
-
-    if ($query['hits']['total'] >= 1) {
-        $results = $query['hits']['hits'];
-    }
+    $article = $es->get([
+        'index' => 'articles',
+        'type' => 'article',
+        'id' => $articleId
+        ]);
 }
 
 ?>
@@ -35,7 +24,7 @@ if (isset($_GET['q'])) {
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>Articles</title>
+    <title><?php echo $article['_source']['title']; ?></title>
 
     <!-- Bootstrap core CSS -->
     <link href="public/stylesheets/bootstrap.css" rel="stylesheet">
@@ -89,25 +78,15 @@ if (isset($_GET['q'])) {
         <hr>
         <div class="row">
             <?php
-            if (isset($results)) {
-                foreach ($results as $r) {
-                    ?>
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <a href="article.php?id=<?php echo $r['_id']; ?>">
-                                <?php echo $r['_source']['title']; ?>
-                            </a>
-                        </div>
-                        <div class="panel-body">
-                            <?php echo implode(', ', $r['_source']['keywords']); ?>
-                        </div>
-                    </div>
-                    <?php
-                }
+            if (isset($article)) {
+            ?>
+                <h2><?php echo $article['_source']['title']; ?></h2>
+                <p><?php echo $article['_source']['body']; ?></p>
+            <?php
             }
             ?>
         </div>
-
+        <br>
     </div> <!-- /container -->
 
 

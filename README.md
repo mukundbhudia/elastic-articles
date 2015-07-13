@@ -1,4 +1,4 @@
-# README #
+# elastic-articles #
 
 An news article index and searching app written in PHP using Elasticsearch.
 

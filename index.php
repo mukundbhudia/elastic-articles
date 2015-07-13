@@ -78,7 +78,7 @@ if (isset($_GET['q'])) {
 
                 <form class="form-inline" action="index.php" method="get">
                     <div class="form-group">
-                        <input type="text" class="form-control" id="search" name="q" value="<?php echo $_GET['q']; ?>" placeholder="Search...">
+                        <input type="text" class="form-control" id="search" name="q" value="<?php if (isset($_GET['q'])) { echo $_GET['q']; } ?>" placeholder="Search...">
                     </div>
                     <div class="form-group">
                         <button type="submit" class="btn btn-default">Search</button>

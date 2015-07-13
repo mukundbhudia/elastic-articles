@@ -69,47 +69,39 @@ if (isset($_GET['q'])) {
                     <li class="active"><a href="#">Home</a></li>
                     <li><a href="add.php">Add article</a></li>
                 </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="active"><a href="./">Default <span class="sr-only">(current)</span></a></li>
-                    <li><a href="../navbar-static-top/">Static top</a></li>
-                    <li><a href="../navbar-fixed-top/">Fixed top</a></li>
-                </ul>
             </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->
     </nav>
 
     <div class="container">
         <div class="row">
-            <div class="col-md-8">
-                <form class="form-horizontal" action="index.php" method="get">
+
+                <form class="form-inline" action="index.php" method="get">
                     <div class="form-group">
-                        <label for="search" class="col-sm-3 control-label">Search query</label>
-                        <div class="col-sm-8">
-                            <input type="text" class="form-control" id="search" name="q" value="<?php echo $_GET['q']; ?>" placeholder="Keyword">
-                        </div>
+                        <input type="text" class="form-control" id="search" name="q" value="<?php echo $_GET['q']; ?>" placeholder="Search...">
                     </div>
                     <div class="form-group">
-                        <div class="col-sm-offset-3 col-sm-8">
-                            <button type="submit" class="btn btn-default">Search</button>
-                        </div>
+                        <button type="submit" class="btn btn-default">Search</button>
                     </div>
                 </form>
-            </div>
-        </div>
 
+        </div>
+        <hr>
         <div class="row">
             <?php
             if (isset($results)) {
                 foreach ($results as $r) {
                     ?>
-                        <div class="result">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
                             <a href="#<?php echo $r['_id']; ?>">
                                 <?php echo $r['_source']['title']; ?>
                             </a>
-                            <div>
-                                <?php echo implode(', ', $r['_source']['keywords']); ?>
-                            </div>
                         </div>
+                        <div class="panel-body">
+                            <?php echo implode(', ', $r['_source']['keywords']); ?>
+                        </div>
+                    </div>
                     <?php
                 }
             }

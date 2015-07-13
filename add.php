@@ -66,11 +66,6 @@ if (!empty($_POST)) {
                     <li class="active"><a href="#">Home</a></li>
                     <li><a href="index.php">Search</a></li>
                 </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="active"><a href="./">Default <span class="sr-only">(current)</span></a></li>
-                    <li><a href="../navbar-static-top/">Static top</a></li>
-                    <li><a href="../navbar-fixed-top/">Fixed top</a></li>
-                </ul>
             </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->
     </nav>

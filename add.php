@@ -63,7 +63,7 @@ if (!empty($_POST)) {
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Home</a></li>
+                    <li class="active"><a href="index.php">Home</a></li>
                     <li><a href="index.php">Search</a></li>
                 </ul>
             </div><!--/.nav-collapse -->
@@ -84,7 +84,7 @@ if (!empty($_POST)) {
                     <div class="form-group">
                         <label for="body" class="col-sm-3 control-label">Body</label>
                         <div class="col-sm-8">
-                            <textarea class="form-control" id="body" name="body" rows="5"></textarea>
+                            <textarea class="form-control" id="body" name="body" rows="10"></textarea>
                         </div>
                     </div>
                     <div class="form-group">
